@@ -38,7 +38,7 @@ app.get('/about', (req, res) => {
 app.get('/test', (req, res) => {
 
     res.send("hi it's test");
-    // console.log(res.)
+    // console.log(res.)dd
 
 })
 
