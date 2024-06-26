@@ -1,0 +1,21 @@
+{
+  "name": "test0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/MarNikk/test0.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn tsc",
+    "run": "node dist/index.js",
+    "test": "yarn tsc -w & yarn nodemon --inspect dist/index.js",
+    "start": "yarn build && yarn run run"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.5.2"
+  }
+}
