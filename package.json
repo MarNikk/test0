@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "start": "cd back-end && yarn start",
-    "back-end": "cd back-end && yarn build",
     "Install": "yarn && cd back-end && yarn"
   }
 }
