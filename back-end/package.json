@@ -8,14 +8,16 @@
     "build": "yarn tsc",
     "run": "node dist/index.js",
     "test": "yarn tsc -w & yarn nodemon --inspect dist/index.js",
-    "start": "yarn build && yarn run run"
+    "start": "yarn build && yarn run run",
+    "@types/express": "^4.17.21",
+    "typescript": "^5.5.2"
   },
   "dependencies": {
     "express": "^4.19.2"
   },
   "devDependencies": {
-    "@types/express": "^4.17.21",
-    "nodemon": "^3.1.4",
-    "typescript": "^5.5.2"
+
+    "nodemon": "^3.1.4"
+
   }
 }
