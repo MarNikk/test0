@@ -6,6 +6,6 @@
   "scripts": {
     "start": "cd back-end && yarn start",
     "back-end": "cd back-end && yarn build",
-    "install": "yarn install && cd back-end && yarn install"
+    "Install": "yarn install && cd back-end && yarn install"
   }
 }
