@@ -17,6 +17,6 @@ homeRourter.get('/home', (req, res) => {
 
 homeRourter.get('/about', (req, res) => {
 
-    res.send('hello mega-men from my person');
+    res.send('hello mega-men from me');
 
 })
