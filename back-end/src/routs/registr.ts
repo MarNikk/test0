@@ -31,7 +31,7 @@ registrRourter.get('/getUsers/:name', (req, res) => {
     }
 })
 registrRourter.post('/addUsers', (req, res) => {
-    let a = JSON.parse(req.body);
+    let a = (req.body);  //JSON.parse
     db.users.push(a);
     res.status(201);
 })
