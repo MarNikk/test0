@@ -1,19 +1,32 @@
+import {db} from "../db/db"
+
+type User = {
+    password: string
+    name: string,
+    id: number,
+}
+
 export const usersRepository = {
 
-    getUser(id:string){ // get user by id
-        
+    getUser(id:number){ // get user by id
+        return db.users.find((item)=> item.id == id)
     },
     getUsers(){ // get all users
-        
+        return db.users
     },
-    createUser(){ // create user by info from params
-        
+    getlengthUsers(){ // get all users
+        return db.users.length
     },
-    updateUser(wich:string, onWhat:string){ // update user param (witch : onWhat)
-        
+    createUser(user:User){ // create user by info from params
+        db.users.push(user)
     },
-    dellUser(id:string){ // dell user by id
-        
+    updateUser(id:number, what:string, value:string){ // update user param (what : value)
+        let a:any = db.users.find((item)=> item.id == id)
+        a[what] = value
+    },
+    dellUser(id:number){ // dell user by id
+        let a:any = db.users.findIndex((item)=> item.id == id)
+        delete db.users[a];
     },
 
 }

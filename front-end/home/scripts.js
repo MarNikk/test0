@@ -14,17 +14,17 @@ function start (params){
     });
 }
 function getPostQeust(infoPanel) {
-    let fname = document.getElementById('fname').value;
-    let lname = document.getElementById('lname').value;
+    let name = document.getElementById('nikname').value;
+    let password = document.getElementById('password').value;
     // document.getElementById('infoPanel').innerHTML = res.body;
     infoPanel ??= document.getElementById('infoPanel');
 
-    fetch("http://localhost:8080/registr/test/",{
+    fetch("http://localhost:8080/registr/addUser/",{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({"fname": fname, "lname": lname})
+        body: JSON.stringify({"name": name, "password": password})
     })
         .then(res => res.ok ? "res gooood" : "you lox").then(a => console.log(a))
         // .then(res=>res.json())
