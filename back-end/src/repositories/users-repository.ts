@@ -1,14 +1,15 @@
 import {db} from "../db/db"
+import {registr} from "../models/registr"
 
-type User = {
-    password: string
-    name: string,
-    id: number,
-}
+// type User = {
+//     password: string
+//     name: string,
+//     id: number,
+// }
 
 export const usersRepository = {
 
-    getUser(id:number){ // get user by id
+    getUser(id:registr.id){ // get user by id
         return db.users.find((item)=> item.id == id)
     },
     getUsers(){ // get all users
@@ -17,14 +18,16 @@ export const usersRepository = {
     getlengthUsers(){ // get all users
         return db.users.length
     },
-    createUser(user:User){ // create user by info from params
+    createUser(user: registr.User){ // create user by info from params
         db.users.push(user)
     },
-    updateUser(id:number, what:string, value:string){ // update user param (what : value)
-        let a:any = db.users.find((item)=> item.id == id)
-        a[what] = value
+    updateUser(id:registr.id, what:"name"|"password", value:string){ // update user param (what : value)
+        let a:any = db.users.find((item)=> item.id == id)?.id
+        // let user: registr.User = db.users[a]
+        // user[what]
+         db.users[a][what] = value
     },
-    dellUser(id:number){ // dell user by id
+    dellUser(id:registr.id){ // dell user by id
         let a:any = db.users.findIndex((item)=> item.id == id)
         delete db.users[a];
     },
